@@ -19,5 +19,5 @@
 
 **2: flex: 1是什么意思**
 - flex属性 是 flex-grow、flex-shrink、flex-basis三个属性的缩写。
-- **回答：**即为flex-grow：1； 经常用作自适应布局，将父容器的display：flex，侧边栏大小固定后，将内容区flex：1；内容区则会自动放大占满剩余空间。
+- **回答**即为flex-grow：1； 经常用作自适应布局，将父容器的display：flex，侧边栏大小固定后，将内容区flex：1；内容区则会自动放大占满剩余空间。
 
