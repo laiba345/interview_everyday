@@ -25,3 +25,7 @@ arr2.sort(compare("age"));
 console.log(arr2)
 // 结果
 // ({ name: "3", age: "10" }, { name: "1", age: "18" }, { name: "2", age: "19" })];
+
+let arr3 = [1, 2, 3, 4, 5]
+let newArr3 = arr3.filter(x => x > 3)
+console.log(newArr3) // [4, 5]
