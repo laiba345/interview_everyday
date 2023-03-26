@@ -1,0 +1,6 @@
+localStorage和sessionStorage是什么
+- 它们都用于在浏览器中存储数据
+- localStorage是一种持久性存储机制；意味着存储在其中的数据将一直存在；即使用户关闭了浏览器窗口或者电脑重启
+- sessionStorage也是用来存储数据的；与localStorage不同的是：它的生命周期仅限于当前会话；如果用户关闭了浏览器，存储在sessionStorage当中的数据将被清除
+
+- 其中；它们都只能存储字符串类型的数据
