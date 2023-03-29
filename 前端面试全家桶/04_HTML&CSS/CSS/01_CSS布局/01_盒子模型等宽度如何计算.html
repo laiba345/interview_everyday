@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 100px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        问题：请问div1的offsetWidth的宽度是多大？
+        offsetWidth = (内容宽度 + 内边距 + 边框)，无外边距（margin不算了）
+        答案：100 + 10 * 2 + 1 * 2 = 122 
+
+        补充：如果让offsetWidth等于100px，该如何做？
+            - 在上述style中，添加一个box-sizing: border-box
+            - 解释：因为上述内容就是width: 100px
+     -->
+    <div id="div1"></div>
+  </body>
+</html>
