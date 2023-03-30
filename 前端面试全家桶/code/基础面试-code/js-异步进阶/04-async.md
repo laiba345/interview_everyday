@@ -101,7 +101,7 @@ console.log( fn1() ) // 相当于 Promise.resolve(100)
 })()
 ```
 
-- try...catch 捕获 rejected 状态
+- **try...catch 捕获 rejected 状态**
 
 ```js
 (async function () {
@@ -110,7 +110,7 @@ console.log( fn1() ) // 相当于 Promise.resolve(100)
         const res = await p4
         console.log(res)
     } catch (ex) {
-        console.error(ex)
+        console.error(ex) // try...catch 相当于 Promise的catch
     }
 })()
 ```
