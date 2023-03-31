@@ -11,6 +11,7 @@ class People {
 // 子类
 class Student extends People {
     constructor(name, number) {
+        // name属性直接通过super来继承操作
         super(name)
         this.number = number
     }
