@@ -19,6 +19,7 @@ class Student {
 }
 
 // 通过类 new 对象/实例
+// 通过new关键字来创建一个新的实例对象
 const xialuo = new Student('夏洛', 100)
 console.log(xialuo.name)
 console.log(xialuo.number)

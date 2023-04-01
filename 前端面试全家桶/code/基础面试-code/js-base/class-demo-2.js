@@ -12,7 +12,7 @@ class People {
 class Student extends People {
     constructor(name, number) {
         // name属性直接通过super来继承操作
-        super(name)
+        super(name) // 自己有哪些属性不需要获取的时候，直接使用super来继承
         this.number = number
     }
     sayHi() {
@@ -24,6 +24,7 @@ class Student extends People {
 class Teacher extends People {
     constructor(name, major) {
         super(name)
+        // 子类有哪些自己特殊的属性，自己加上即可
         this.major = major
     }
     teach() {

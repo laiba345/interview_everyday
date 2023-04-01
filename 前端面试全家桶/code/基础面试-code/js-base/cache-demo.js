@@ -1,6 +1,7 @@
 // 闭包隐藏数据，只提供 API
 function createCache() {
     const data = {} // 闭包中的数据，被隐藏，不被外界访问
+    // return其2个函数；因为这两个函数是在createCache作用域里面
     return {
         set: function (key, val) {
             data[key] = val
