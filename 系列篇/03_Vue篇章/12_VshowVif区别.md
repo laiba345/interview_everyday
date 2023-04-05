@@ -1,12 +1,13 @@
 v-show和v-if的区别
 - 控制手段不同
     - v-show是通过给元素添加 css 属性display: none，但元素仍然存在；而v-if控制元素显示或隐藏是将元素整个添加或删除。
+    
 - 编译过程不同
     - v-if切换有一个局部编译/卸载的过程，切换过程中合适的销毁和重建内部的事件监听和子组件；v-show只是简单的基于 css 切换。
+    
 - 编译条件不同
     - v-if是真正的条件渲染，它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建，渲染条件为假时，并不做操作，直到为真才渲染。
-- 触发生命周期不同
-    - v-show由 false 变为 true 的时候不会触发组件的生命周期；v-if由 false 变为 true 的时候，触发组件的beforeCreate、created、beforeMount、mounted钩子，由 true 变为 false 的时候触发组件的beforeDestory、destoryed钩子。
+   
 - 性能消耗不同
     - 性能消耗不同。v-if有更高的切换消耗；v-show有更高的初始渲染消耗。
 
