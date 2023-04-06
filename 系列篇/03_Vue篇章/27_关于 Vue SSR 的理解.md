@@ -1,5 +1,5 @@
 关于 Vue SSR 的理解？
-- SSR即服务端渲染（Server Side Render），就是将 Vue 在客户端把标签渲染成 html 的工作放在服务端完成，然后再把 html 直接返回给客户端。
+- SSR即**服务端渲染**（Server Side Render），就是将 **Vue 在客户端把标签渲染成 html 的工作放在服务端完成，然后再把 html 直接返回给客户端。
 - 优点
     - 有更好的SEO，并且首屏加载速度更快
 - 缺点
