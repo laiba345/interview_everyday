@@ -28,4 +28,6 @@ console.log(arr2)
 
 let arr3 = [1, 2, 3, 4, 5]
 let newArr3 = arr3.filter(x => x > 3)
+// 过滤出来的值是要求符合上面条件的；
+// 即将 x > 3 的值最终给过滤出来才行
 console.log(newArr3) // [4, 5]
