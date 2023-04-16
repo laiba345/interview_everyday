@@ -1,6 +1,6 @@
 Vue路由传参
 1. 动态路由参数
-    - 我们可以声明一个带有动态路由参数的路由
+    - 我们可以**声明一个带有动态路由参数的路由**
     ```
     {
         path: '/user/:id',
@@ -8,7 +8,7 @@ Vue路由传参
         component: User
     }
     ```
-    - 然后在组件中使用$route.params对象来访问路由参数
+    - 然后**在组件中使用$route.params对象来访问路由参数**
     ```
     <template>
         <div>{{ $route.params.id }}</div>
