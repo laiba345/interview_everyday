@@ -1,4 +1,5 @@
 Vue的生命周期
+- 用来在组件不同阶段执行特定的操作，从而实现对组件的精细控制；
 - Vue 的生命周期可以分为8个阶段
     - 创建前后（beforeCreate、created）
     - 挂载前后（beforeMount、mounted）
