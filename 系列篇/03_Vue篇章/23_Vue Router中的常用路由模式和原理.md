@@ -1,11 +1,9 @@
 Vue Router中的常用路由模式和原理?
 - hash模式
-    - **location.hash的值就是url中 # 后面的东西**；它的**特点**在于：hash虽然出现url中，但不会被包含在HTTP请求中，对后端完全没有影响，因此改变hash不会重新加载页面；**缺点**就是：外观不好看；
-    - 可以为hash的改变添加监听事件window.addEventListener("hashchange", funcRef, false)，每一次改变hash (window.location.hash)，都会在浏览器的访问历史中增加一个记录，利用hash的以上特点，就可以实现前端路由更新视图但不重新请求页面的功能了。
+    - **location.hash的值就是url中 # 后面的东西**；它的**特点**在于：hash虽然出现url中，但不会被包含在HTTP请求中，对后端完全没有影响，因此改变hash不会重新加载页面；
     - 特点：兼容性好；不美观
 - history模式
-    - 利用 HTML5 History Interface 中新增的pushState()和replaceState()方法。
-    **这两个方法应用于浏览器的历史记录栈，在当前已有的back、forward、go 的基础上，他们提供了对历史记录进行修改的功能。
-    - 特点：虽然美观，但是刷新会出现 404 需要后端进行配置。
+    - 利用pushState()和replaceState()方法。**这两个方法应用于浏览器的历史记录栈，在当前已有的back、forward、go 的基础上，他们提供了对历史记录进行修改的功能。
+    - 特点：虽然美观，**但是刷新会出现 404 需要后端进行配置**；兼容性不好
 - 两个方法**共同点**：当调用他们修改浏览器历史记录栈后，**虽然当前url改变了，但浏览器不会刷新页面**，这就为单页面应用前端路由“更新视图但不重新请求页面”提供了基础
 
