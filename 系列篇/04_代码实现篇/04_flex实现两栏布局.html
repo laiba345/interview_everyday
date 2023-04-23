@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex实现两栏布局</title>
+    <!-- 
+        解释：
+            - display: flex 将 .container 元素设置为 Flex 布局。
+            - flex-basis 属性指定了每个子元素的基础大小。在这个例子中，左栏占据了容器的 30%，右栏占据了容器的 70%。
+    -->
+    <style>
+        .container {
+            display: flex;
+        }
+        .left-column {
+            flex-basis: 30%;
+            background-color: yellow;
+        }
+        .right-column {
+            flex-basis: 70%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">这是左栏布局</div>
+        <div class="right-column">这是右栏布局</div>
+    </div>
+</body>
+</html>
