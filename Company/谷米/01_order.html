@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>订单</title>
+  </head>
+  <body>
+    <!-- 
+        Question:
+            - 一个页面上有10个订单，
+            - 每个订单信息通过 /api/order/{id}获取详细信息, 
+            - 点击一个"刷新"按钮重新获取订单信息，
+            - 并按订单最后更新时间倒序排列。
+        用原生JS
+
+        完成时间
+            -开始:15.40
+            -结束:16.24
+    -->
+    <h1>订单列表</h1>
+    <button id="refresh_btn">刷新</button>
+    <ul id="order_list"></ul>
+
+    <script>
+      /* const orderListMessage = [
+        { id: 1, updateTime: "2023-04-27T10:00:00", name: "订单1" },
+        { id: 2, updateTime: "2023-04-27T11:00:00", name: "订单2" },
+        { id: 3, updateTime: "2023-04-27T12:00:00", name: "订单3" },
+        { id: 4, updateTime: "2023-04-27T13:00:00", name: "订单4" },
+        { id: 5, updateTime: "2023-04-27T14:00:00", name: "订单5" },
+        { id: 6, updateTime: "2023-04-27T15:00:00", name: "订单6" },
+        { id: 7, updateTime: "2023-04-27T16:00:00", name: "订单7" },
+        { id: 8, updateTime: "2023-04-27T17:00:00", name: "订单8" },
+        { id: 9, updateTime: "2023-04-27T18:00:00", name: "订单9" },
+        { id: 10, updateTime: "2023-04-27T19:00:00", name: "订单10" },
+      ]; */
+      // 获取Dom信息
+      const refreshBtn = document.getElementById("refrest_btn");
+      const orderList = document.getElementById("order_list");
+
+      // 获取订单信息并渲染到页面
+      function getOrderMessageRender() {
+        // 从服务器获取订单信息
+        Promise.all(
+          Array.from({ length: 10 }, (_, i) =>
+            fetch(`/api/order/${i + 1}`).then((res) => res.json())
+          )
+        ).then((orders) => {
+          // 并按订单最后更新时间倒序排列;updatedTime为更新时间
+          orders.sort((a, b) => b.updatedTime - a.updatedTime);
+
+          // 渲染订单信息到页面
+          orderList.innerHTML = "";
+          orders.forEach((order) => {
+            const li = document.createElement("li");
+            li.textContent = `订单号:${order.id}, 订单名为:${order.name}, 更新时间:${order.updatedTime}`;
+            orderList.appendChild(li);
+          });
+        });
+      }
+
+      // first refresh
+      getOrderMessageRender();
+      // 监听刷新按钮，获取订单信息并渲染页面
+      refreshBtn.addEventListener("click", () => {
+        getOrderMessageRender();
+      });
+    </script>
+  </body>
+</html>
