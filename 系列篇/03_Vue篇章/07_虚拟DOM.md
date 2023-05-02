@@ -9,5 +9,34 @@
 - 结构
     - 没有统一的标准；一般包括**tag、props、children**三项
         - tag：必须。就是标签，也可以是组件或者函数
+            - **表示该节点的 HTML 标签名**，比如 div、span、p 等。
         - props：非必选。就是这个标签上的属性和方法
+            - **表示该节点的 HTML 属性**，比如 class、id、style 等。
         - children：非必选。就是这个标签的内容或者子节点
+            - **表示该节点的子节点**，可以是其他虚拟 DOM 节点，也可以是文本节点。
+    - 虚拟DOM树示例；
+    ```
+    {
+      tag: 'div',
+      props: {
+        class: 'container',
+        id: 'app'
+      },
+      children: [
+        {
+          tag: 'h1',
+          props: {
+            class: 'title'
+          },
+          text: 'Hello World!'
+        },
+        {
+          tag: 'p',
+          props: {
+            class: 'content'
+          },
+          text: 'This is a paragraph.'
+        }
+      ]
+    }
+   ```
