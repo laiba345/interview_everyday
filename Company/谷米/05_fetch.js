@@ -9,6 +9,12 @@ fetch(url).then(response => {
     // 处理错误
 })
 
+// fetch(url).then(response => {
+//     // 处理响应
+// }).catch((error) => {
+//     // 处理错误
+// }) 
+
 // 2、发送Post请求；发送Post请求的话，需要使用fetch()方法的第二个参数
 fetch(url, {
     method: 'POST',  // 设置请求方法

@@ -43,6 +43,10 @@
       // 获取订单信息并渲染到页面
       function getOrderMessageRender() {
         // 从服务器获取订单信息
+        // Promise.all()里面放的是一个数组，数组里面也是一个个Promise对象
+        // 获取Promise中的内容是通过.then来实现的，
+        // .then当中可以获取到很多的数据，对数据的操作逻辑一般都是放在后面的.then()
+        // 中进行处理
         Promise.all(
           Array.from({ length: 10 }, (_, i) =>
             fetch(`/api/order/${i + 1}`).then((res) => res.json())
@@ -53,6 +57,7 @@
 
           // 渲染订单信息到页面
           orderList.innerHTML = "";
+          // orders是一个大数组，order是里面的一个属性，
           orders.forEach((order) => {
             const li = document.createElement("li");
             li.textContent = `订单号:${order.id}, 订单名为:${order.name}, 更新时间:${order.updatedTime}`;

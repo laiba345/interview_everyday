@@ -14,3 +14,6 @@ console.log(arr2);
 // Array.from({ length: 10 }, (_, i) =>
 //   fetch(`/api/order/${i + 1}`).then((res) => res.json())
 // );
+
+let arr3 = Array.from({length: 10})
+console.log(arr3) // 全是undefined，反正最后的结局是返回一个数组[]

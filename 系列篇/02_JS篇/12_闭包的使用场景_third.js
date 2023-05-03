@@ -1,29 +1,26 @@
 /* 
-    3、模块化开发
-    - 利用闭包可以实现模块化开发，可以将变量和方法封装在模块中，
-    避免全局变量的污染和命名冲突
+  3、实现函数柯里化
+  - 函数柯里化是指将一个多参数的函数转换成一系列单参数的函数的过程
+  - 使用闭包来实现函数柯里化
 */
-var module = (function () {
-  var privateVar = 0;
+function add(x, y) {
+  return x + y;
+}
 
-  function privateMethod() {
-    console.log(privateVar);
-  }
-
-  return {
-    publicMethod: function () {
-      privateVar++;
-      privateMethod();
-    },
+function curry(func) {
+  return function (x) {
+    return function (y) {
+      return func(x, y);
+    };
   };
-})();
+}
 
-module.publicMethod(); // 输出 0
-module.publicMethod(); // 输出 1
+const curriedAdd = curry(add)
+console.log(curriedAdd(2)(3)) // 5
 
 /* 
-    解释
-    - 在上述代码中，使用立即执行函数创建了一个模块，其中的私有变量和方法都被封装在模块中。
-    - 通过返回一个对象，可以访问模块的公共方法 publicMethod，而无法访问私有变量和方法。
-    - 总的来说，闭包可以用于封装变量和方法、延迟执行、模块化开发等场景
+  curry函数接受一个函数作为一个参数，并返回一个新的函数
+  新函数接收一个参数'x',并返回一个闭包函数，该闭包函数接受另一个参数'y',
+  并调用原始函数func来计算结果，
+  - 通过使用闭包来捕获'x'和 'func'，从而实现函数柯里化的功能
 */
