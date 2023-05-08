@@ -6,4 +6,7 @@ Vue的生命周期
     - 更新前后（beforeUpdate、updated）
     - 销毁前后（beforeUnmounted、unmounted)
     - **以及一些特殊场景的生命周期**
+        - activated；keep-alive组件激活时调用
+        - deactivated；keep-alive组件停用时调用
+        
     
