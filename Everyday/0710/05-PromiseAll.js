@@ -1,3 +1,4 @@
+// Promise.all() 用于处理多个Promise对象
 const promise1 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('Promise 1');

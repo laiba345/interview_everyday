@@ -8,9 +8,10 @@ const obj = {
 console.log(Object.entries(obj)) // 是一个大数组，
 
 const filteredObj = Object.entries(obj).reduce((acc, [key, value]) => {
-    console.log('acc', acc) // 
+    console.log('acc', acc) // 就是一开始的初始变量的一次次迭代
     // console.log('key', key)
     // console.log('value', value)
+    // [key, value]就是前面一次次迭代的东西
     if (value !== null && value !== undefined) {
         acc[key] = value;
     }
