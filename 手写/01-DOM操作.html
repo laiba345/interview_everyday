@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM操作</title>
+    <style>
+        .highlight {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv">Hello World</div>
+
+    <script>
+        // 获取元素
+        const element = document.querySelector('#myDiv')
+        // 添加类
+        element.classList.add('highlight')
+        // 删除类
+        element.classList.remove('highlight')
+        // 修改元素内容
+        // element.textContent = "Hello hk"
+        // 修改元素HTML内容
+        element.innerHTML = '<strong>Hello, hk!</strong>'
+    </script>
+</body>
+
+</html>

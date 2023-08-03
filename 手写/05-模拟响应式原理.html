@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟响应式原理</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: '张三',
+            age: 18
+        }
+        let p = {}
+        // 通过一个对象去操控另一个对象
+        Object.defineProperty(p, 'name', {
+            // 用于决定该属性是否可以被重新配置或删除
+            configurable: true,
+            // 有人读取name属性时
+            get() {
+                console.log('有人读取了name属性');
+                return person.name
+            },
+            // 有人修改name属性时
+            set(value) {
+                console.log('有人修改name属性');
+                person.name = value
+            }
+        })
+    </script>
+</body>
+
+</html>
