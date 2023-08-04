@@ -17,14 +17,14 @@ function debounce(func, delay) {
     - debounce函数参数
         - func 需要进行防抖处理的函数
         - delay 指定的等待时间
-    - 返回一个新的函数，这个新函数就是经过防抖处理后的函数。
+    - 返回一个新的函数，这个新函数就是经过防抖处理后的函数。(经过防抖处理后的函数)
     - 当新函数被调用时，它会清除之前设置的定时器（如果有的话），然后重新设置一个新的定时器。
     - 只有在等待时间内没有再次调用新函数时，定时器才会触发执行原始的func函数。
 */
 function myFunction() {
     console.log('My Function');
 }
-// 创建一个防抖函数，等待事件为500毫秒
+// 创建一个防抖函数，等待事件为500毫秒 
 const debouncedFunction = debounce(myFunction, 2000)
 
 debouncedFunction()

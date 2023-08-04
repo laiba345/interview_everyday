@@ -6,6 +6,7 @@ function throttle(func, delay) {
     let isThrottled = false
 
     return function (...args) {
+        // 没有节流,从此处就开启节流模式
         if (!isThrottled) {
             func.apply(this, args)
             isThrottled = true

@@ -14,7 +14,7 @@
             age: 18
         }
         let p = {}
-        // 通过一个对象去操控另一个对象
+        // 通过一个对象去操控另一个对象; 通过Object.defineProperty() 来进行相关的模拟操作
         Object.defineProperty(p, 'name', {
             // 用于决定该属性是否可以被重新配置或删除
             configurable: true,
