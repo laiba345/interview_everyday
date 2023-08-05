@@ -13,6 +13,7 @@
 function removeDuplicates(arr) {
     // self代表数组对象本身
     // filter表示过滤掉的内容就是表达式中符合条件的内容
+    // 后面是过滤的条件
     return arr.filter((value, index, self) => self.indexOf(value) === index);
 }
 

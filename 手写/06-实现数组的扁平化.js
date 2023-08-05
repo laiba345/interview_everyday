@@ -1,7 +1,9 @@
-// 1、使用递归实现
+// 1、使用递归实现（使用递归来实现）
 function flattenArray(arr) {
     let result = []
+    // 遍历； 
     for (let item of arr) {
+        // 判断
         if (Array.isArray(item)) {
             result = result.concat(flattenArray(item))
         } else {
