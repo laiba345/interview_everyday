@@ -1,11 +1,11 @@
 /* 
-    join
+    join - 连成字符串
 */
 let arr1 = [1, 2, 3, 4, 5, 6, 7];
 let str1 = arr1.join();
 console.log(arr1);
 console.log(arr1.length); // 7
-console.log(str1);
+console.log(str1, typeof str1); // string
 
 /* 
     按照数组对象中的某个值排序
