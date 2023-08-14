@@ -11,9 +11,9 @@ Vue的生命周期
 
 - Vue3
     - setup函数代替了beforeCreate、created
-    - 挂载前后；beforeMount、mounted
-    - 更新前后；beforeUpdate、onUpdated
-    - 卸载前后；beforeUnmount、onUnmounted
+    - 挂载前后；onBeforeMount、onMounted
+    - 更新前后；onBeforeUpdate、onUpdated
+    - 卸载前后；onBeforeUnmount、onUnmounted
 - 新增的钩子
     - onRenderTracked； 用于追踪组件渲染时的依赖追踪情况
     - onRenderTriggered； 用于追踪组件渲染时的依赖触发情况
