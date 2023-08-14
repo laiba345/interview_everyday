@@ -13,8 +13,10 @@
             name: '张三',
             age: 18
         }
+        // 会返回一个新的对象;
         const p = new Proxy(person, {
             // 有人读取了p中的某个属性时调用
+            // 参数；目标对象 || 属性值
             get(target, propName) {
                 console.log(`有人读取了p身上的${propName}属性`);
                 return Reflect.get(target, propName)

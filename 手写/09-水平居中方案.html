@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        要求
+        - 水平居中方案 两个元素上下居中 水平对称
+     -->
+    <style>
+        body {
+            margin: 0;
+            /* 
+                保证相关的内容；
+                此处是保证相关的居中内容
+            */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 固定一个高度，用来保持某一个值居中即可 */
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .element {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            margin: 10px 0;
+            /* 调整上下间距 */
+            /* 
+                1、margin只有一个值，表示上右下左的margin同为这个值。
+                2、margin只有两个值，第一个值表示上下margin值，第二个值为左右margin的值。
+                3、margin有三个值，第一个值表示上margin值，第二个值表示左右margin的值，第三个值表示下margin的值。
+            */
+        }
+    </style>
+    <title>水平居中示例</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="element"></div>
+        <div class="element"></div>
+    </div>
+</body>
+
+</html>
