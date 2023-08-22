@@ -22,3 +22,17 @@ function throttle(fn, timer) {
         }
     }
 }
+
+function throttle(fn, timer) {
+    let timer = null
+    return function() {
+        let args = arguments
+        if(!timer) {
+            timer = setTimeout(() => {
+                // 作用：在延迟后调用被节流的函数fn，并将之前传递给节流函数的参数传递给fn
+                fn.apply(this, args)
+                timer = null 
+            }, delay);
+        }
+    }
+}

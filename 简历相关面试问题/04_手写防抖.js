@@ -21,3 +21,16 @@ function antiShake(Sum, delay) {
         }, delay);
     }
 }
+
+// antiShake()
+function antiShake(Sum, delay) {
+    let timer = null
+    let args = arguments
+    // 返回闭包函数
+    return function() {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            Sum.apply(this, args)
+        }, delay);
+    }
+}
