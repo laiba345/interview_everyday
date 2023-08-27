@@ -6,7 +6,7 @@ class Phone {
     this.color = color;
     this.price = price;
   }
-  // 对象方法
+  // 对象方法; 
   call() {
     console.log("我可以打电话");
   }
@@ -22,11 +22,12 @@ class Phone {
   }
 }
 
-// 子类
+// 子类; 通过审extends来进行继承操作
 class SmartPhone extends Phone {
   constructor(brand, color, price, screen, pixel) {
-    // 父类有的直接继承
+    // 父类有的直接继承; 
     super(brand, color, price);
+    // 添加新的属性
     this.screen = screen;
     this.pixel = pixel;
   }
@@ -44,7 +45,7 @@ class SmartPhone extends Phone {
   }
 }
 
-// 实例化对象
+// 实例化对象; 通过new关键字来实现; 
 const Nokia = new Phone("诺基亚", "白色", 230);
 const iPhone6s = new SmartPhone("苹果", "黑色", 5999, "4.7inch", "500w");
 

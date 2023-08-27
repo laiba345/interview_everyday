@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div居中</title>
+    <style>
+        .center-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 选择其中一个 */
+            margin-left: -50px;
+            /* 假设元素宽度为 100px */
+            margin-top: -50px;
+            /* 假设元素高度为 100px */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-element" style="height: 100px;width: 100px;background-color: blue;"></div>
+</body>
+
+</html>

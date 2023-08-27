@@ -10,6 +10,7 @@ const p = new Promise(function (resolve, reject) {
 });
 
 // 调用promise对象的then方法
+// p.then中也是调用相应的函数来操作; 
 p.then(
   function (value) {
     console.log(value);
@@ -24,11 +25,11 @@ p.then(
 const p2 = new Promise((resolve, reject) => {
   // 1、创建对象
   const xhr = new XMLHttpRequest();
-  // 2、初始化
+  // 2、初始化 ~ 跟踪某个具体的网址
   xhr.open("GET", "http://api.apiopen.top/getJoke");
   // 3、发送
   xhr.send();
-  // 4、绑定事件，处理响应结果
+  // 4、绑定事件，处理响应结果  
   xhr.onreadystatechange = function () {
     // 判断
     if (xhr.readyState === 4) {
