@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3响应式原理</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name:'hk', 
+            age: 18
+        }
+        const p = new Proxy(person, {
+            // 有人读取p的某个属性时调用
+            get(target, propName) {
+                console.log(`有人读取了p身上的${propName}属性`);
+                // 读取了直接返回即可
+                return Reflect.get(target, propName)
+            }, 
+            set(target, propName, value) {
+                console.log(`有人修改了p身上的${propName}属性，我要去更新界面了！`);
+                Reflect.set(target, propName, value)
+            },
+            // 有人删除p中的某个属性时使用
+            deleteProperty(target, propName) {
+                console.log(`有人删除了p身上的${propName}属性，我要去更新界面了！`);
+                return Reflect.deleteProperty(target, propName);
+            }
+        })
+    </script>
+</body>
+</html>

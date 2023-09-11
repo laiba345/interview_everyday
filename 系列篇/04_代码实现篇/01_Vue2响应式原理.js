@@ -6,9 +6,14 @@ let person = {
   name: "张三",
   age: 18,
 };
-
+// 通过另一个对象来
 let p = {};
 // 可以用循环的方式来对所有的属性进行代理
+/* 
+  1. 对象
+  2. 属性
+  3. 相应的配置
+*/
 Object.defineProperty(p, "name", {
   configurable: true,
   // 有人读取name时调用

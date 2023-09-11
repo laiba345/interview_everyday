@@ -2,9 +2,6 @@
     2、模拟Vue3的响应式原理
         - 浏览器中实现
 */
-/* 
-
-*/
 let person = {
   name: "章三",
   age: 18,
@@ -25,5 +22,6 @@ const p = new Proxy(person, {
   deleteProperty(target, propName) {
     console.log(`有人删除了p身上的${propName}属性，我要去更新界面了！`);
     return Reflect.deleteProperty(target, propName);
-  },
+  },  
 });
+
