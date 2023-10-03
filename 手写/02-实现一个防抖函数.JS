@@ -4,11 +4,21 @@
         - 指定的等待时间内，如果多次触发同一个函数，只执行最后一次调用
 */
 // 可以使用闭包 + 定时器来实现
+// function debounce(func, delay) {
+//     let timerId
+//     return function(...args) {
+//         clearTimeout(timerId)
+//         timerId = setTimeout(() => {
+//             func.apply(this, args)
+//         }, delay);
+//     }
+// }
 function debounce(func, delay) {
-    let timerId
-    return function(...args) {
-        clearTimeout(timerId)
-        timerId = setTimeout(() => {
+    let timer = null
+    let args = arguments
+    return function() {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
             func.apply(this, args)
         }, delay);
     }

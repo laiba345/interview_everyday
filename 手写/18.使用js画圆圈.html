@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;  
+        }
+    </style>
+</head>
+<body>
+    <div id="circle" class="hidden"></div>
+    <button id="showCircle">显示圆圈</button>
+
+    <script>
+        const circle = document.getElementById('circle')
+        const showCircleButton = document.getElementById('showCircle')
+        showCircleButton.addEventListener('click', () => {
+            circle.style.display = 'block'
+        })
+    </script>
+</body>
+</html>
